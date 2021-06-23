@@ -16,7 +16,7 @@ app.use((req, res, next) => {
     next();
 }) 
 
-mongoose.connect('mongodb+srv://HenriqueRonald:asd102030@cluster0.h6xsp.azure.mongodb.net/episodes?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://HenriqueRonald:asd102030@cluster0.h6xsp.azure.mongodb.net/podcast?retryWrites=true&w=majority',{
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
