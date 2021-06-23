@@ -38,8 +38,8 @@ app.get("/episodes", (req,res) => {
     })
 });
 
-app.get("/:id", (req, res) => {
-    Episodes.findOne({_id:req.params.id}).then((episodes) =>{
+app.get("/episodes/:id", (req, res) => {
+    Episodes.findOne({id:req.params.id}).then((episodes) =>{
         return res.json(episodes);
     }).catch((erro) => {
         return res.status(400).json({
