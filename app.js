@@ -20,15 +20,17 @@ mongoose.connect('mongodb+srv://HenriqueRonald:asd102030@cluster0.h6xsp.azure.mo
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
-  useCreateIndex: true
+  useCreateIndex: true,
+ 
 }).then(() => {
+    
     console.log("conexao ao mongo realizada com sucesso");
 }).catch((erro) => {
     console.log("error : ohh nao algo deu errado , verifique e tente novamente.");
 });
 
 app.get("/episodes", (req,res) => {
-    Episodes.find({}).then((episodes) => {
+    Episodes.find({}).sort({_id: -1}).then((episodes) => {
         return res.json(episodes);
     }).catch((erro) => {
         return res.json(400).json({
